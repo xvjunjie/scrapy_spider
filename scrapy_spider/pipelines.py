@@ -11,7 +11,7 @@ from pymongo import MongoClient
 logger = logging.getLogger(__name__)
 
 client = MongoClient()
-collection = client["tencent"]["hr"]
+db = client["python_database"]
 
 
 class ScrapySpiderPipeline(object):
@@ -22,8 +22,11 @@ class ScrapySpiderPipeline(object):
 
 
 class TencentSpiderPipeline(object):
+    def __init__(self):
+        self.hr_cllection = db["hr_cllection"]
+
     def process_item(self, item, spider):
         if spider.name == "hr_tencent":
-            collection.insert(dict(item))
+            self.hr_cllection.insert(dict(item))
 
         return item
