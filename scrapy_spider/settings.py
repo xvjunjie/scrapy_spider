@@ -16,11 +16,11 @@ NEWSPIDER_MODULE = 'scrapy_spider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'scrapy_spider (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-
+LOG_LEVEL = "WARNING"
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -64,9 +64,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scrapy_spider.pipelines.ScrapySpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapy_spider.pipelines.ScrapySpiderPipeline': 300,
+   'scrapy_spider.pipelines.TencentSpiderPipeline': 301,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
