@@ -14,9 +14,11 @@ BOT_NAME = 'scrapy_spider'
 SPIDER_MODULES = ['scrapy_spider.spiders']
 NEWSPIDER_MODULE = 'scrapy_spider.spiders'
 
+LOG_LEVEL = "WARNING"
+LOG_FILE = "./log.log"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'scrapy_spider (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -64,9 +66,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scrapy_spider.pipelines.ScrapySpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapy_spider.pipelines.ScrapySpiderPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
