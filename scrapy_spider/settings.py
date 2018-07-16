@@ -17,6 +17,8 @@ NEWSPIDER_MODULE = 'scrapy_spider.spiders'
 LOG_LEVEL = "WARNING"
 LOG_FILE = "./log.log"
 
+
+MONGO_HOST = "localhost"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
 
@@ -69,6 +71,7 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
    'scrapy_spider.pipelines.ScrapySpiderPipeline': 300,
    'scrapy_spider.pipelines.TencentSpiderPipeline': 301,
+   'scrapy_spider.pipelines.SunSpiderPipeline': 302,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

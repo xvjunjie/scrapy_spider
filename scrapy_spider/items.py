@@ -17,5 +17,16 @@ class ScrapySpiderItem(scrapy.Item):
 class TencentSpiderItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    title = scrapy.Field
     position = scrapy.Field
-    time = scrapy.Field
+    publish_date = scrapy.Field
+    content = scrapy.Field
+    content_img = scrapy.Field
+
+
+class SunSpiderItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title = scrapy.Field
+    href = scrapy.Field
+    publish_date = scrapy.Field

@@ -14,8 +14,9 @@ class ItcastSpider(scrapy.Spider):
     def parse(self, response):
         li_lsit = response.xpath("//div[@class='tea_con']//li")
 
-        item = ScrapySpiderItem()
+
         for li in li_lsit:
+            item = ScrapySpiderItem()
             item["name1"] = li.xpath(".//h3/text()").extract_first()
             # print(item["name"])
             yield item
