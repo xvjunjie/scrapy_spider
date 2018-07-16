@@ -30,3 +30,12 @@ class SunSpiderItem(scrapy.Item):
     title = scrapy.Field
     href = scrapy.Field
     publish_date = scrapy.Field
+
+
+
+class SltsSpiderItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title = scrapy.Field
+    href = scrapy.Field
+    publish_date = scrapy.Field
